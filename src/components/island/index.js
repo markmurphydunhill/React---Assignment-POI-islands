@@ -6,15 +6,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class Island extends Component {
     render() {
         return (
-            <div className="col-sm-10">
+            <div className="col-sm-14">
                 <div className="card">
 
                     <div className="card-body">
                         <h5 className="card-title ">
-                            {`${this.props.island.name} ${
-                                this.props.island.name
-                                }`}
+                            {this.props.island.name}
                         </h5>
+                        <p>
+                             {
+                                this.props.island.description
+                                }
+                        </p>
                         <p key="email">
                             <FontAwesomeIcon icon={["fas", "envelope"]} />
                             <span> {this.props.island.name}</span>

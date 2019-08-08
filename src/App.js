@@ -1,26 +1,42 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./components/header/";
+import IslandList from "./components/islandList/";
+import localCache from './localCache';
+import request from 'superagent' ;
+//import FilterControls from "./components/filterControls/";
 
 class App extends Component {
+
+
+  componentDidMount() {
+    console.log('componentDidMount of IslandsApp')
+    request.get('https://rocky-fjord-61678.herokuapp.com/api/islands')
+        .end((error, res) => {
+            if (res) {
+              let islands = JSON.parse(res.text);
+              localCache.populate(islands);
+              console.log(islands);
+              console.log('mark');
+              this.setState({}) ;
+          } else {
+              console.log(error);
+          }
+        })
+  }
+
+
   render() {
+
+      console.log('render of IslandsApp')
+      let listIslands = localCache.getAll()
+      console.log (listIslands)
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <div className="jumbotron">
+          <Header/>
+
+          <IslandList islands={listIslands} />
+        </div>
     );
   }
 }
