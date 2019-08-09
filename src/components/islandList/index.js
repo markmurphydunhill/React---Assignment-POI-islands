@@ -11,6 +11,8 @@ export default class IslandList extends Component {
         ));
         return (
             <div className="container-fluid contacts bg-info">
+                <p>This is the island list</p>
+
                 <div className="row">{islandCards}</div>
             </div>
         );
