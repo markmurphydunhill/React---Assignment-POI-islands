@@ -8,7 +8,7 @@ class Header extends Component {
                     <div className="col-md-6 offset-4">
                         <div className="page-header">
                             <h1>
-                                Contact List <span className="badge badge-pill badge-success">{this.props.noContacts}</span>
+                                Islands of Ireland <span className="badge badge-pill badge-success">{this.props.noContacts}</span>
                             </h1>
                         </div>
                     </div>
