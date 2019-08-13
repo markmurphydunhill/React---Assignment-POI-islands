@@ -7,7 +7,17 @@ import request from 'superagent' ;
 //import FilterControls from "./components/filterControls/";
 
 class App extends Component {
+   /* constructor(props) {
+        super(props)
+        this.state = {
+            displayRegionId : '5d4fd2c8b517580017006a7c',
+            displayRegionName: 'North East'
+        };
+    }*/
 
+  /*  displayIslandsByRegions = (id, title) => {
+        this.setState({ displayRegionId: id, displayRegionName: title });
+    };*/
 
   componentDidMount() {
       console.log('componentDidMount of IslandsApp')
@@ -17,9 +27,9 @@ class App extends Component {
               if (res) {
                   let islands = JSON.parse(res.text);
                   localCache.populate(islands);
-                  console.log(islands);
-                  console.log('mark');
-                  this.setState({}) ;
+                  //console.log(islands);
+                  //console.log('mark');
+                 // this.setState({}) ;
               } else {
                   console.log(error);
               }
@@ -34,7 +44,7 @@ class App extends Component {
                   console.log('murphy');
                   console.log(listRegions);
 
-                // this.setState({}) ;
+                 this.setState({}) ;
               } else {
                   console.log(error);
               }
@@ -45,18 +55,33 @@ class App extends Component {
   render() {
 
       console.log('render of IslandsApp')
-      let listIslands = localCache.getAll()
+      /*let listIslands = localCache.getAll()
+          .filter(
+          (island) => {
+              let islandregion = island.region
+              console.log(islandregion)
+              return (islandregion.search(this.state.displayRegionId) !== -1)
+          }
+      )*/
+      //let regionName = this.state.displayRegionName
       let listRegions = localCache.getAllRegions()
-     // console.log (listIslands)
+     console.log (listRegions);
 
     return (
         <div className="jumbotron">
           <Header/>
-          <RegionList regions={listRegions}/>
-          <IslandList islands={listIslands} />
+            <div className="row">
+
+                    <RegionList regions={listRegions}/>
+
+            </div>
         </div>
+
+
+
     );
   }
 }
 
 export default App;
+/*<div className="col-md-2 ">*/

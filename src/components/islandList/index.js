@@ -9,6 +9,7 @@ export default class IslandList extends Component {
                      island={c}
                      deleteHandler={this.props.deleteHandler}/>
         ));
+        console.log(islandCards);
         return (
             <div className="container-fluid contacts bg-info">
                 <p>This is the island list</p>
