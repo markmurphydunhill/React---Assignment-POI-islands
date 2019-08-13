@@ -2,6 +2,7 @@ class LocalCache {
     constructor() {
         this.islands = [];
         this.regions = [];
+        this.users =[];
     }
 
 
@@ -18,6 +19,14 @@ class LocalCache {
     }
 
     getAllRegions() {
+        return this.regions ;
+    }
+
+    populateUsers(regions) {
+        this.regions = regions;
+    }
+
+    getAllUsers() {
         return this.regions ;
     }
 

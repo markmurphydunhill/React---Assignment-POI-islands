@@ -6,10 +6,16 @@ import localCache from '../../localCache';
 
 export default class RegionList extends Component {
 
+
+
     constructor(props) {
         super(props)
+        let region1 = this.props.regions;
+        //let region1id = region1._id;
+        console.log('constructor');
+        console.log(region1);
         this.state = {
-            displayRegionId : '5d512bbee909f50017d0d747',
+            displayRegionId: '5d52e373716d900017687cca',
             displayRegionName: 'North East'
         }}
 

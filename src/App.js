@@ -27,9 +27,24 @@ class App extends Component {
               if (res) {
                   let islands = JSON.parse(res.text);
                   localCache.populate(islands);
-                  //console.log(islands);
+                  console.log(islands);
                   //console.log('mark');
-                 // this.setState({}) ;
+                  this.setState({}) ;
+              } else {
+                  console.log(error);
+              }
+          })
+
+      request.get('https://rocky-fjord-61678.herokuapp.com/api/users')
+          .end((error, res) => {
+              if (res) {
+                  let users = JSON.parse(res.text);
+                  localCache.populate(users);
+                  console.log(users);
+                  let listUsers = localCache.getAllUsers()
+                  console.log('murphy');
+                  console.log(listUsers);
+                  //this.setState({}) ;
               } else {
                   console.log(error);
               }
@@ -44,7 +59,7 @@ class App extends Component {
                   console.log('murphy');
                   console.log(listRegions);
 
-                 this.setState({}) ;
+                // this.setState({}) ;
               } else {
                   console.log(error);
               }
