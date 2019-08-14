@@ -6,7 +6,7 @@ import Island from '../src/components/island/'
 import IslandList from '../src/components/islandList/'
 
 
-//const samples = {request.get('https://rocky-fjord-61678.herokuapp.com/api/islands')},
+const samples = {request.get('https://rocky-fjord-61678.herokuapp.com/api/islands')},
 
 
 

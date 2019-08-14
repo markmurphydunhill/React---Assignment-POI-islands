@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 class LocalCache {
     constructor() {
         this.islands = [];
@@ -22,13 +24,30 @@ class LocalCache {
         return this.regions ;
     }
 
-    populateUsers(regions) {
-        this.regions = regions;
+    populateUsers(users) {
+        this.users = users;
     }
 
     getAllUsers() {
-        return this.regions ;
+        return this.users ;
     }
+
+    update(key, name, description) {
+        let index = _.findIndex(this.islands, island => island.name === key);
+        if (index !== -1) {
+            this.islands[index].name = name;
+            this.islands[index].description = description;
+            return true;
+        }
+        return false;
+    }
+
+    delete(k) {
+        console.log('Delete');
+        let elements = _.remove(this.islands, island => island.name === k);
+        return elements;
+    }
+
 
 
 }

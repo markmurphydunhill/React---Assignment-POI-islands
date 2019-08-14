@@ -29,7 +29,22 @@ class App extends Component {
                   localCache.populate(islands);
                   console.log(islands);
                   //console.log('mark');
-                  this.setState({}) ;
+                 this.setState({}) ;
+              } else {
+                  console.log(error);
+              }
+          })
+
+          request.get('https://rocky-fjord-61678.herokuapp.com/api/regions')
+          .end((error, res) => {
+              if (res) {
+                  let regions = JSON.parse(res.text);
+                  localCache.populateRegions(regions);
+                  let listRegions = localCache.getAllRegions()
+                  console.log('murphy');
+                  console.log(listRegions);
+
+                 this.setState({}) ;
               } else {
                   console.log(error);
               }
@@ -39,31 +54,17 @@ class App extends Component {
           .end((error, res) => {
               if (res) {
                   let users = JSON.parse(res.text);
-                  localCache.populate(users);
-                  console.log(users);
+                  localCache.populateRegions(users);
                   let listUsers = localCache.getAllUsers()
-                  console.log('murphy');
+                  console.log('list of users');
                   console.log(listUsers);
-                  //this.setState({}) ;
+
+               //   this.setState({}) ;
               } else {
                   console.log(error);
               }
           })
-
-      request.get('https://rocky-fjord-61678.herokuapp.com/api/regions')
-          .end((error, res) => {
-              if (res) {
-                  let regions = JSON.parse(res.text);
-                  localCache.populateRegions(regions);
-                  let listRegions = localCache.getAllRegions()
-                  console.log('murphy');
-                  console.log(listRegions);
-
-                // this.setState({}) ;
-              } else {
-                  console.log(error);
-              }
-          })
+      //this.setState({});
   }
 
 

@@ -10,12 +10,12 @@ export default class RegionList extends Component {
 
     constructor(props) {
         super(props)
-        let region1 = this.props.regions;
+        //let region1 = this.props.regions;
         //let region1id = region1._id;
         console.log('constructor');
-        console.log(region1);
+       // console.log(region1);
         this.state = {
-            displayRegionId: '5d52e373716d900017687cca',
+            displayRegionId: '5d5409dc9401b600171f45c5',
             displayRegionName: 'North East'
         }}
 

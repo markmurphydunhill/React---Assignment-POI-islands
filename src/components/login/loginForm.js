@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
+//import Island from "../island";
 
-export class Login extends Component {
+class Login extends Component {
     render() {
-        return <h2>Login page</h2>;
+        return  <h2>Contact Us page</h2>
     }
 }
 
-export default Login;
+export default Login
