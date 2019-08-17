@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import Header from '../src/components/header/'
 import Island from '../src/components/island/'
@@ -8,8 +9,7 @@ import Region from '../src/components/region/'
 import RegionList from '../src/components/regionList/'
 import { action } from '@storybook/addon-actions';
 import { MemoryRouter, Route } from "react-router";
-//import PublicProfile from '../src/components/contactPublic/publicProfile';
-//import ContactPrivateDetails from '../src/components/contactPrivate/';
+
 
 
 
