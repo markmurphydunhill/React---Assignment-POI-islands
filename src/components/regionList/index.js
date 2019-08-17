@@ -10,12 +10,8 @@ export default class RegionList extends Component {
 
     constructor(props) {
         super(props)
-        //let region1 = this.props.regions;
-        //let region1id = region1._id;
-        console.log('constructor');
-       // console.log(region1);
         this.state = {
-            displayRegionId: '5d5409dc9401b600171f45c5',
+            displayRegionId: '5d58056835981c0017ee92c7',
             displayRegionName: 'North East'
         }}
 
@@ -36,17 +32,19 @@ export default class RegionList extends Component {
         const regionCards = this.props.regions.map(c => (
             <Region key={c.title}
                     region={c}
-                    deleteHandler={this.props.deleteHandler}/>
+                    />
         ));
 
         return (
             <div className="container-fluid contacts bg-info">
-                <p>These are the islands of  the region</p>
+                <h1>Please select a Regions</h1>
 
                 <div className="row" >
-                    {regionCards}
-                     handleChange={this.filterIslands}
+                    {regionCards},
+                     onChange={this.filterIslands}
                 </div>
+
+
 
                 <IslandList islands= {listIslands} />
             </div>

@@ -6,13 +6,13 @@ export default class IslandList extends Component {
     render() {
         const islandCards = this.props.islands.map(c => (
             <Island key={c.name}
-                     island={c}
-                     deleteHandler={this.props.deleteHandler}/>
+                     island={c}/>
+
         ));
         console.log(islandCards);
         return (
             <div className="container-fluid contacts bg-info">
-                <p>This is the island list</p>
+
 
                 <div className="row">{islandCards}</div>
             </div>

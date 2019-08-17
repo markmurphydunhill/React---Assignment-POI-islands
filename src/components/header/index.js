@@ -21,11 +21,7 @@ class Header extends Component {
                             Login
                         </Link>
                     </li>
-                    <li className="p-2">
-                        <Link className="text-white" to="#">
-                            Nav A
-                        </Link>
-                    </li>
+
 
                 </ul>
             </nav>

@@ -12,7 +12,7 @@ class Island extends Component {
         description: this.props.island.description,
         previousDetails: {
             name: this.props.island.name,
-        description: this.props.island.description
+            description: this.props.island.description,
         }
     };
     handleEdit = () => this.setState({ status: "edit" });
@@ -32,8 +32,6 @@ class Island extends Component {
     };
     handleSave = e => {
         e.preventDefault();
-        //let updatedName = this.state.Name.trim();
-        //let updatedDescription = this.state.description.trim();
 
         let updatedName = this.state.name;
         let updatedDescription = this.state.description;
@@ -63,7 +61,8 @@ class Island extends Component {
             rightButtonHandler = this.handleConfirm;
         }
         return (
-            <div className="col-sm-3">
+            <div className="col-sm-12">
+
                 <div className={`card  ${cardColor}`}>
                    <div className="card-body">
                         <h5 className="card-title ">
@@ -91,11 +90,11 @@ class Island extends Component {
                         ) : (
                             <Fragment>
                                 <p>
-                                    <FontAwesomeIcon icon={["fas", "envelope"]} />
+
                                     <span> {this.props.island.name}</span>
                                 </p>
                                 <p>
-                                    <FontAwesomeIcon icon={["fas", "phone"]} />
+                                    <FontAwesomeIcon icon={["fa", "info"]} />
                                     <span> {this.props.island.description} </span>
                                 </p>
                             </Fragment>
@@ -131,52 +130,3 @@ class Island extends Component {
 export default Island;
 
 
-    /*
-
-    render() {
-        return (
-            <div className="col-sm-14">
-                <div className="card">
-
-                    <div className="card-body">
-                        <h5 className="card-title ">
-                            {this.props.island.name}
-                        </h5>
-                        <p>
-                             {
-                                this.props.island.description
-                                }
-                        </p>
-
-
-                        <p key="email">
-                            <FontAwesomeIcon icon={["fas", "envelope"]} />
-                            <span> {this.props.island.name}</span>
-                        </p>
-                        <p key="phone">
-                            <FontAwesomeIcon icon={["fas", "phone"]} />
-                            <span> {this.props.island.name} </span>
-                        </p>
-                    </div>
-                    <div className="card-footer">
-                        <div
-                            className="btn-group d-flex btn-group-justified"
-                            role="group"
-                            aria-label="..."
-                        >
-                            <button type="button" className={"btn btn-default w-100"}>
-                                {" Edit "}
-                            </button>
-                            <button type="button" className={"btn btn-danger w-100"}>
-                                {"Delete"}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
-
-export default Island
-    */

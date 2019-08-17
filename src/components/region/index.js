@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./region.css";
 import "../../fontawesome";
-import IslandList from "../islandList/";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 class Region extends Component {
     onSelect = (event) => {
